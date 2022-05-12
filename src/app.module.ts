@@ -1,7 +1,8 @@
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from "@nestjs/graphql";
-import { UsersModel } from './users/users.module';
+import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -9,7 +10,8 @@ import { UsersModel } from './users/users.module';
       driver: ApolloDriver,
       autoSchemaFile: 'schema.gql',
     }),
-    UsersModel,
+    UsersModule,
+    AuthModule,
   ],
   controllers: [],
   providers: [],
