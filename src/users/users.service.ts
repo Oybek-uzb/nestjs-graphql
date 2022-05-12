@@ -9,7 +9,14 @@ import { User } from "./models/user";
 
 @Injectable()
 export class UsersService {
-    private users: User[] = []
+    private users: User[] = [
+        {
+            email: "programmingiswonderful@gmail.com",
+            password: "1102123112",
+            age: 21,
+            userId: "2163783jhgj893123213"
+        }
+    ]
 
     public createUser(createUserData: CreateUserInput): User {
         const user: User = {
